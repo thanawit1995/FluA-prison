@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ศูนย์ปฏิบัติการตอบโต้ภาวะฉุกเฉิน: สอบสวนและควบคุมการระบาดไข้หวัดใหญ่สายพันธุ์เอ เรือนจำจังหวัดสุโขทัย</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49'
+            },
+            crimson: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+              800: '#9f1239'
+            }
+          },
+          fontFamily: {
+            sans: ['Sarabun', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Sarabun -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      .print-break-inside-avoid {
+        break-inside: avoid;
+      }
+      body {
+        background-color: white !important;
+        color: black !important;
+      }
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- Top Command Header -->
+  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-sky-600 flex items-center justify-center text-white font-bold shadow-lg shadow-sky-600/30">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-900/90 text-rose-200 border border-rose-700">
+                <span class="w-1.5 h-1.5 mr-1.5 rounded-full bg-rose-400 animate-ping"></span>
+                แผนปฏิบัติการภาวะฉุกเฉินทางสาธารณสุข
+              </span>
+              <span class="text-xs text-sky-300 font-mono">อัปเดตเกณฑ์: สธ. 2566 & BIS/BTS Thorax</span>
+            </div>
+            <h1 class="text-sm sm:text-lg font-bold tracking-tight text-white flex items-center gap-2">
+              ควบคุมการระบาดไข้หวัดใหญ่สายพันธุ์เอ เรือนจำจังหวัดสุโขทัย (14 ก.ย. 2569)
+            </h1>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2 sm:space-x-3 no-print">
+          <button onclick="window.print()" class="inline-flex items-center px-3 py-2 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 transition shadow-sm">
+            <svg class="w-4 h-4 mr-1.5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+            </svg>
+            พิมพ์คู่มือ
+          </button>
+          <button onclick="copyProtocolSummary()" class="inline-flex items-center px-3 py-2 text-xs font-medium rounded-lg bg-sky-600 hover:bg-sky-500 text-white transition shadow-md">
+            <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            คัดลอกสรุปคำสั่ง
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sub-navigation tabs -->
+    <div class="bg-slate-800/90 backdrop-blur border-t border-slate-700/60 overflow-x-auto custom-scrollbar no-print">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-2 py-2 text-xs">
+        <a href="#incident-teams" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 transition whitespace-nowrap">1. บทบาท 5 ทีมปฏิบัติการ</a>
+        <a href="#triage-tool" class="px-3 py-1.5 rounded-md bg-sky-600 text-white font-semibold shadow whitespace-nowrap">⚡ เครื่องมือคัดกรอง & คำนวณยา</a>
+        <a href="#clinical-protocol" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 transition whitespace-nowrap">2. แนวทาง Swab / CXR / ยาต้านไวรัส</a>
+        <a href="#antibiotic-protocol" class="px-3 py-1.5 rounded-md text-amber-300 hover:text-white hover:bg-amber-900/40 transition whitespace-nowrap">3. ยาปฏิชีวนะร่วม (Augmentin 1 g) & ขนาดยาไต</a>
+        <a href="#referral-criteria" class="px-3 py-1.5 rounded-md text-rose-300 hover:text-white hover:bg-rose-900/40 transition whitespace-nowrap">4. เกณฑ์ส่งต่อ รพ.สุโขทัย (CRB-65)</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform transition-all duration-300 translate-y-20 opacity-0 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-sky-500/40 flex items-center gap-3">
+    <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
+    <span id="toast-text" class="text-sm font-medium">คัดลอกข้อมูลสำเร็จ</span>
+  </div>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+
+    <!-- Section: Incident Command 5 Teams -->
+    <section id="incident-teams" class="scroll-mt-24 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-sky-700 tracking-wider uppercase">ส่วนที่ 1 • โครงสร้างกำลังพล</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900">การแบ่งบทบาทหน้าที่ 5 ทีมปฏิบัติการ (Incident Command)</h3>
+        </div>
+        <span class="text-xs text-slate-500 hidden sm:inline">เป้าหมาย: คัดกรองรวดเร็ว แพทย์โฟกัสเคสสีแดงและเหลือง</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- Team 1 -->
+        <div class="bg-white rounded-xl p-5 border-t-4 border-t-rose-500 shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 text-rose-800">ทีมที่ 1</span>
+            <span class="text-[11px] text-slate-500">พยาบาล รพ. / สสอ. / รพ.สต. / พยาบาลเรือนจำ</span>
+          </div>
+          <h4 class="font-bold text-slate-800 text-base mb-2">คัดกรองและคัดแยก (Triage & V/S)</h4>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            วัดอุณหภูมิ, BP, PR, RR และ SpO2 ทุกราย พร้อมซักประวัติกลุ่มเสี่ยง (อายุ ≥ 60 ปี, หอบหืด, COPD, DM, CKD, โรคหัวใจ, HIV, อ้วน BMI ≥ 30)
+          </p>
+          <div class="space-y-1.5 text-xs font-medium pt-2 border-t border-slate-100">
+            <div class="flex items-center text-rose-700 gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+              <span><strong>แดง:</strong> SpO2 &lt; 95%, RR &gt; 24, หอบเหนื่อย, ซึม</span>
+            </div>
+            <div class="flex items-center text-amber-700 gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+              <span><strong>เหลือง:</strong> กลุ่มเสี่ยงสูงแต่ยังไม่หอบ หรือไข้สูง &gt; 38.5°C</span>
+            </div>
+            <div class="flex items-center text-emerald-700 gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span><strong>เขียว:</strong> ร่างกายแข็งแรง อาการน้อย ไข้ต่ำๆ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="bg-white rounded-xl p-5 border-t-4 border-t-sky-500 shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-sky-100 text-sky-800">ทีมที่ 2</span>
+            <span class="text-[11px] text-slate-500">แพทย์ + พยาบาลประจำจุดตรวจ รพ.</span>
+          </div>
+          <h4 class="font-bold text-slate-800 text-base mb-2">ตรวจรักษาและสั่งยา (Treatment & MD)</h4>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            แพทย์โฟกัสตรวจร่างกายเฉพาะ <strong>กลุ่มสีแดงและเหลือง</strong> ฟังปอดอย่างละเอียด ประเมินภาวะ Pneumonia สั่ง Mobile CXR และสั่งจ่ายยา Oseltamivir / Favipiravir
+          </p>
+          <div class="text-xs bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-slate-700 space-y-1">
+            <div>• <strong>กลุ่มสีเขียว:</strong> พยาบาลจ่ายยารักษาตามอาการตาม Standing Order</div>
+            <div>• <strong>ปรับขนาดยาไต:</strong> แพทย์สั่งปรับตามตาราง CrCl</div>
+          </div>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="bg-white rounded-xl p-5 border-t-4 border-t-indigo-500 shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">ทีมที่ 3</span>
+            <span class="text-[11px] text-slate-500">นักรังสีการแพทย์ รพ.สุโขทัย</span>
+          </div>
+          <h4 class="font-bold text-slate-800 text-base mb-2">เอกซเรย์เคลื่อนที่ (Mobile CXR)</h4>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            ประจำรถเอกซเรย์เคลื่อนที่ ถ่ายภาพรังสีทรวงอกเฉพาะผู้ป่วยที่แพทย์ส่งตรวจตามเกณฑ์ เพื่อตรวจหา Infiltrate, Consolidation หรือวัณโรคปอดแทรกซ้อน
+          </p>
+          <div class="text-xs bg-indigo-50 p-2.5 rounded-lg border border-indigo-200 text-indigo-900 space-y-1">
+            <div>• รายงานผลรังสีแบบด่วน (Wet read) ให้แพทย์หน้างาน</div>
+            <div>• สวม PPE ป้องกันการสัมผัสละอองฝอยขณะจัดท่าผู้ป่วย</div>
+          </div>
+        </div>
+
+        <!-- Team 4 -->
+        <div class="bg-white rounded-xl p-5 border-t-4 border-t-teal-500 shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-teal-100 text-teal-800">ทีมที่ 4</span>
+            <span class="text-[11px] text-slate-500">ทีมสอบสวนโรค สคร. / สสจ.</span>
+          </div>
+          <h4 class="font-bold text-slate-800 text-base mb-2">สอบสวนโรค & ชันสูตร (Epi & Lab)</h4>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            จัดทำ Line listing ผู้ป่วยและผู้สัมผัส, วิเคราะห์ Epicurve รายแดน/เรือนนอน และดำเนินการ Swab สุ่มเก็บตัวอย่างส่ง RT-PCR 10–20 ราย
+          </p>
+          <div class="text-xs bg-teal-50 p-2.5 rounded-lg border border-teal-200 text-teal-900 space-y-1">
+            <div>• สุ่มตรวจผู้ป่วยเริ่มแรกของแต่ละแดนเพื่อยืนยัน Subtype</div>
+            <div>• นำส่งห้องปฏิบัติการศูนย์วิทยาศาสตร์การแพทย์ตามระบบลูกโซ่ความเย็น (Cold chain)</div>
+          </div>
+        </div>
+
+        <!-- Team 5 -->
+        <div class="bg-white rounded-xl p-5 border-t-4 border-t-emerald-500 shadow-sm border border-slate-200 md:col-span-2 lg:col-span-2">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">ทีมที่ 5</span>
+            <span class="text-[11px] text-slate-500">กลุ่มงานอนามัยสิ่งแวดล้อม สสจ. + เจ้าหน้าที่ราชทัณฑ์</span>
+          </div>
+          <h4 class="font-bold text-slate-800 text-base mb-2">ควบคุมสิ่งแวดล้อม & แยกกัก (Cohort Ward & IPC)</h4>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            กำหนดและจัดเตรียมพื้นที่ <strong>Cohort Isolation Ward</strong> แยกผู้ป่วยติดเชื้อออกจากผู้ต้องขังปกติอย่างเด็ดขาด, จัดระเบียบการแจก Surgical mask ให้ทุกคน 100%, ปรับปรุงการระบายอากาศเรือนนอน และควบคุมไม่ให้แจก Oseltamivir ป้องกันผู้สัมผัสโดยไม่มีข้อบ่งชี้
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="bg-emerald-50 p-2.5 rounded-lg border border-emerald-200 text-emerald-900">
+              <span class="font-bold">การระบายอากาศ:</span> เปิดหน้าต่างเรือนนอน 2 ด้าน ติดตั้งพัดลมดูดอากาศออกสู่ภายนอก
+            </div>
+            <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-amber-900">
+              <span class="font-bold">เฝ้าระวังผู้สัมผัส:</span> วัดไข้และคัดกรองอาการทุกวัน ไม่จ่ายยาป้องกันล่วงหน้า
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Triage & Medication Allocation Tool -->
+    <section id="triage-tool" class="scroll-mt-24 bg-white rounded-2xl p-5 sm:p-6 shadow-md border-2 border-sky-500/40">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-xs font-bold text-sky-600 tracking-wider uppercase">⚡ Clinical Tool • อ้างอิง สธ. 2566 & BTS</span>
+          <h3 class="text-lg sm:text-xl font-black text-slate-900">เครื่องมือคัดกรองความรุนแรงและช่วยตัดสินใจสั่งจ่ายยา (Triage & Rx Calculator)</h3>
+        </div>
+        <button onclick="resetTriageForm()" class="text-xs text-slate-500 hover:text-slate-800 underline self-start sm:self-auto">
+          ล้างข้อมูลฟอร์ม
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+        
+        <!-- Left: Input Form (7 cols) -->
+        <div class="lg:col-span-7 space-y-4">
+          
+          <!-- Vital signs row -->
+          <div>
+            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">1. สัญญาณชีพและอาการแสดง (Vital Signs)</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div>
+                <label class="text-[11px] font-semibold text-slate-600">อุณหภูมิ (°C)</label>
+                <input type="number" id="v-temp" step="0.1" value="38.4" class="w-full mt-1 p-2 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:outline-none" oninput="calculateTriage()">
+              </div>
+              <div>
+                <label class="text-[11px] font-semibold text-slate-600">SpO2 Room Air (%)</label>
+                <input type="number" id="v-spo2" value="96" class="w-full mt-1 p-2 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:outline-none" oninput="calculateTriage()">
+              </div>
+              <div>
+                <label class="text-[11px] font-semibold text-slate-600">RR (ครั้ง/นาที)</label>
+                <input type="number" id="v-rr" value="20" class="w-full mt-1 p-2 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:outline-none" oninput="calculateTriage()">
+              </div>
+              <div>
+                <label class="text-[11px] font-semibold text-slate-600">ความดันโลหิต (SBP)</label>
+                <input type="number" id="v-sbp" value="120" placeholder="SBP mmHg" class="w-full mt-1 p-2 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:outline-none" oninput="calculateTriage()">
+              </div>
+            </div>
+          </div>
+
+          <!-- Symptom duration & Red flag symptoms -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">2. ระยะเวลาและอาการวิกฤต</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <input type="checkbox" id="f-onset-48" class="rounded text-sky-600 h-4 w-4" checked onchange="calculateTriage()">
+                <span>เริ่มมีอาการภายใน 48 ชั่วโมง</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <input type="checkbox" id="f-dyspnea" class="rounded text-rose-600 h-4 w-4" onchange="calculateTriage()">
+                <span class="text-rose-700 font-semibold">หอบเหนื่อยชัดเจน / พูดเป็นคำๆ ไม่ได้</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <input type="checkbox" id="f-crepitation" class="rounded text-rose-600 h-4 w-4" onchange="calculateTriage()">
+                <span>ฟังปอดพบ Fine crepitation / Bronchial breath</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer">
+                <input type="checkbox" id="f-confusion" class="rounded text-rose-600 h-4 w-4" onchange="calculateTriage()">
+                <span class="text-rose-700 font-semibold">ซึม สับสน (Altered consciousness)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- High Risk Conditions (608 & Chronic) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">3. กลุ่มเสี่ยงต่อโรครุนแรง (High-Risk Groups ตาม สธ. 2566)</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" id="hr-age" class="rounded text-amber-600 h-4 w-4" onchange="calculateTriage()">
+                <span>อายุ ≥ 60 ปี</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" id="hr-lung" class="rounded text-amber-600 h-4 w-4" onchange="calculateTriage()">
+                <span>COPD / Asthma / สูบบุหรี่จัด</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" id="hr-dm-heart" class="rounded text-amber-600 h-4 w-4" onchange="calculateTriage()">
+                <span>เบาหวาน / โรคหัวใจและหลอดเลือด</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" id="hr-immuno" class="rounded text-amber-600 h-4 w-4" onchange="calculateTriage()">
+                <span>HIV / ภาวะภูมิคุ้มกันบกพร่อง / กินยากดภูมิ</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" id="hr-obesity" class="rounded text-amber-600 h-4 w-4" onchange="calculateTriage()">
+                <span>โรคอ้วนรุนแรง (BMI ≥ 30 kg/m²)</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" id="hr-aspirin" class="rounded text-amber-600 h-4 w-4" onchange="calculateTriage()">
+                <span>อายุ ≤ 18 ปีที่กิน Aspirin (เสี่ยง Reye's)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Renal status selector -->
+          <div class="pt-2 border-t border-slate-100">
+            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">4. การทำงานของไต (สำหรับปรับขนาดยา Oseltamivir)</h4>
+            <select id="v-crcl" class="w-full p-2 text-xs rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-sky-500 focus:outline-none" onchange="calculateTriage()">
+              <option value="normal" selected>ไตปกติ หรือ CrCl &gt; 60 ml/min</option>
+              <option value="mild-ckd">CrCl 30–60 ml/min (ไตวายเรื้อรังระยะปานกลาง)</option>
+              <option value="mod-ckd">CrCl 10–30 ml/min (ไตวายรุนแรง)</option>
+              <option value="severe-hd">CrCl &lt; 10 ml/min หรือฟอกเลือดล้างไต (Hemodialysis)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Right: Real-time Decision Output (5 cols) -->
+        <div class="lg:col-span-5 bg-slate-50 rounded-xl p-4 border border-slate-200 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+              <span class="text-xs font-bold text-slate-600 uppercase">ผลการประเมินทางคลินิก</span>
+              <span id="res-badge" class="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-100 text-emerald-800">
+                กลุ่มสีเขียว (Green)
+              </span>
+            </div>
+
+            <!-- Triage Summary Display -->
+            <div class="mt-3 space-y-3">
+              <div>
+                <div class="text-[11px] text-slate-500">ระดับความรุนแรง:</div>
+                <div id="res-severity" class="text-base font-bold text-slate-900">ผู้ป่วยอาการไม่รุนแรง (Mild ILI)</div>
+                <div id="res-severity-desc" class="text-xs text-slate-600 mt-0.5">สัญญาณชีพปกติ ไม่มีภาวะขาดออกซิเจน</div>
+              </div>
+
+              <!-- Recommendation boxes -->
+              <div class="space-y-2 text-xs">
+                
+                <!-- Antiviral Rx -->
+                <div class="p-3 rounded-lg border bg-white shadow-sm space-y-1" id="res-antiviral-box">
+                  <div class="flex items-center justify-between font-bold text-slate-800">
+                    <span>คำแนะนำการให้ยาต้านไวรัส:</span>
+                    <span id="res-antiviral-status" class="text-slate-500">รักษาตามอาการ</span>
+                  </div>
+                  <div id="res-antiviral-dosage" class="text-xs font-mono text-sky-700 bg-sky-50 p-2 rounded border border-sky-200">
+                    ไม่จำเป็นต้องให้ยาต้านไวรัส ให้ Paracetamol, Cetirizine, ยาแก้ไอ
+                  </div>
+                  <div id="res-antiviral-note" class="text-[11px] text-slate-500 leading-tight">
+                    *หากอาการไม่ดีขึ้นใน 48 ชม. ให้กลับมาประเมินซ้ำ
+                  </div>
+                </div>
+
+                <!-- CXR Recommendation -->
+                <div class="p-3 rounded-lg border bg-white shadow-sm space-y-1">
+                  <div class="flex items-center justify-between font-bold text-slate-800">
+                    <span>การถ่ายภาพรังสีทรวงอก (Mobile CXR):</span>
+                    <span id="res-cxr-status" class="text-slate-500">ไม่ต้องทำ</span>
+                  </div>
+                  <div id="res-cxr-desc" class="text-slate-600 text-[11px]">
+                    ไม่มีข้อบ่งชี้ทางคลินิก (SpO2 ≥ 95% และ RR ≤ 24 ครั้ง/นาที)
+                  </div>
+                </div>
+
+                <!-- Referral status -->
+                <div class="p-3 rounded-lg border bg-white shadow-sm space-y-1">
+                  <div class="flex items-center justify-between font-bold text-slate-800">
+                    <span>การส่งต่อ รพ.สุโขทัย:</span>
+                    <span id="res-referral-status" class="text-emerald-600 font-semibold">กักตัวใน Cohort Ward เรือนจำ</span>
+                  </div>
+                  <div id="res-referral-desc" class="text-slate-600 text-[11px]">
+                    สามารถดูแลใน Cohort Ward ภายใต้การดูแลของพยาบาลเรือนจำได้
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom rule reminder -->
+          <div class="text-[11px] text-slate-500 p-2 rounded bg-slate-100 border border-slate-200">
+            <strong>กฎสำคัญ (สธ. 2566):</strong> ไม่แนะนำให้ยาต้านไวรัสเพื่อการป้องกัน (Prophylaxis) ในผู้สัมผัสโรค ให้สังเกตอาการและเริ่มยาเมื่อมีไข้หรืออาการ
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Clinical Protocol & Diagnostic Criteria -->
+    <section id="clinical-protocol" class="scroll-mt-24 space-y-4">
+      <div>
+        <span class="text-xs font-bold text-sky-700 tracking-wider uppercase">ส่วนที่ 2 • แนวทางเวชปฏิบัติ</span>
+        <h3 class="text-lg sm:text-xl font-bold text-slate-900">แนวทางการคัดกรองทางคลินิกและการจัดสรรทรัพยากร (Clinical Protocol)</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- Sub-section 4.1 Swab -->
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <span class="p-2 rounded-lg bg-teal-100 text-teal-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </span>
+            <h4 class="font-bold text-slate-800 text-sm">4.1 เกณฑ์การตรวจ Swab (Antigen / RT-PCR)</h4>
+          </div>
+          <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+            <li class="flex items-start gap-1.5">
+              <span class="text-teal-600 font-bold">•</span>
+              <span><strong>ไม่จำเป็นต้องตรวจครบทุกคน:</strong> ในภาวะ Outbreak ในสถานที่ปิด การตรวจ swab ทุกคน 100–200 คนเป็นการสิ้นเปลืองและเกินความจำเป็น</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-teal-600 font-bold">•</span>
+              <span><strong>สุ่มตรวจเพียง 10–20 ราย:</strong> เน้นตรวจเคสแรกๆ ของแต่ละเรือนนอน หรือเคสที่มีอาการรุนแรง เพื่อยืนยัน Subtype และความไวของเชื้อ</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-teal-600 font-bold">•</span>
+              <span><strong>ใช้ Epidemiological Link:</strong> ผู้ต้องขังที่มีอาการไข้หวัดในแดนเดียวกัน ให้ถือว่าเป็นผู้ป่วยไข้หวัดใหญ่และให้การรักษาได้ทันทีโดยไม่ต้อง swab</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sub-section 4.2 CXR -->
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <span class="p-2 rounded-lg bg-indigo-100 text-indigo-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+              </svg>
+            </span>
+            <h4 class="font-bold text-slate-800 text-sm">4.2 เกณฑ์ส่งตรวจ Mobile CXR (สธ. 2566)</h4>
+          </div>
+          <p class="text-xs text-slate-600">หากพบข้อใดข้อหนึ่งต่อไปนี้ <strong>ให้ส่งทำ CXR ทุกราย:</strong></p>
+          <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+            <li class="flex items-start gap-1.5">
+              <span class="text-indigo-600 font-bold">1.</span>
+              <span><strong>SpO2 &lt; 95% at room air</strong> หรือหายใจเร็ว &gt; 24 ครั้ง/นาที</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-indigo-600 font-bold">2.</span>
+              <span>มีอาการหอบเหนื่อยชัดเจน หรือเจ็บแน่นหน้าอกเวลาหายใจ</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-indigo-600 font-bold">3.</span>
+              <span>ฟังปอดพบเสียง <strong>Fine crepitation หรือ Bronchial breath sound</strong></span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-indigo-600 font-bold">4.</span>
+              <span>กลุ่มเสี่ยง 608 ที่มีไข้สูงลอย &gt; 48 ชม. หรือสงสัยภาวะแทรกซ้อนของ <strong>วัณโรคปอด (TB)</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sub-section 4.3 Oseltamivir allocation -->
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <span class="p-2 rounded-lg bg-sky-100 text-sky-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </span>
+            <h4 class="font-bold text-slate-800 text-sm">4.3 การจัดสรร Oseltamivir ตามลำดับความสำคัญ</h4>
+          </div>
+          <div class="space-y-2 text-xs">
+            <div class="bg-rose-50 p-2.5 rounded-lg border border-rose-200">
+              <span class="font-bold text-rose-800">Priority 1 (กลุ่มสีแดง):</span>
+              <p class="text-rose-900 mt-0.5 leading-snug">มีภาวะแทรกซ้อนทางเดินหายใจ / ปอดอักเสบ / SpO2 &lt; 95% <strong>(ให้ยาทันทีแม้เกิน 48 ชม.)</strong></p>
+            </div>
+            <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200">
+              <span class="font-bold text-amber-800">Priority 2 (กลุ่มสีเหลือง):</span>
+              <p class="text-amber-900 mt-0.5 leading-snug">กลุ่มเสี่ยงสูง 608, หอบหืด, อ้วน, ภูมิคุ้มกันต่ำ <strong>(ให้ยาทันที ยิ่งเร็วยิ่งได้ผลดี แม้เกิน 48 ชม. ก็ยังมีประโยชน์)</strong></p>
+            </div>
+            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-slate-600">
+              <span class="font-bold text-slate-700">Priority 3 (กลุ่มสีเขียว):</span>
+              <p class="mt-0.5 leading-snug">ร่างกายแข็งแรง อาการน้อย: ให้การรักษาตามอาการ ไม่จำเป็นต้องจ่ายยาต้านไวรัส ติดตามอาการใน 48 ชม.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 5: Antibiotics & Renal Dosing Table -->
+    <section id="antibiotic-protocol" class="scroll-mt-24 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">ส่วนที่ 3 • เภสัชวิทยา & โรคแทรกซ้อน</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900">การปรับยาตามการทำงานของไต และยาปฏิชีวนะร่วม (สธ. 2566 & BTS Guidelines)</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+<!-- ... existing code -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="bg-slate-50 text-slate-600 border-b border-slate-200">
+                  <th class="p-2 font-semibold">กลุ่มอาการ</th>
+                  <th class="p-2 font-semibold">ยาทางเลือกแรก (Preferred)</th>
+                  <th class="p-2 font-semibold">ยาทางเลือกกรณีแพ้ Penicillin</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700">
+                <tr>
+                  <td class="p-2 font-medium">อาการปานกลาง / ไม่รุนแรง (ดูแลในเรือนจำ)</td>
+                  <td class="p-2 font-medium text-emerald-800">
+                    <strong>Augmentin (Co-amoxiclav)</strong> 1000 mg (1 g) วันละ 2 ครั้ง หลังอาหาร เช้า-เย็น (7 วัน)<br>
+                    <span class="text-slate-500">หรือ Doxycycline 100 mg bid (หลัง stat 200 mg)</span>
+                  </td>
+                  <td class="p-2 text-slate-600">Clarithromycin 500 mg bd PO หรือ Levofloxacin 500 mg od PO</td>
+                </tr>
+                <tr class="bg-rose-50/40">
+                  <td class="p-2 font-medium text-rose-900">ปอดอักเสบรุนแรง (ส่งต่อ รพ.สุโขทัย)</td>
+                  <td class="p-2 font-medium text-rose-800">
+                    <strong>IV Co-amoxiclav</strong> 1.2 g tds<br>
+                    หรือ IV Ceftriaxone 2 g od<br>
+                    <strong>+ IV Clarithromycin</strong> 500 mg bd
+                  </td>
+                  <td class="p-2 text-slate-600">IV Levofloxacin 500 mg bd + ปรึกษาแพทย์โรคติดเชื้อพิจารณา MRSA Cover</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-[11px] text-rose-700 bg-rose-50 p-2.5 rounded-lg border border-rose-200">
+            <strong>คำเตือน:</strong> ห้ามใช้แอสไพริน (Aspirin) ในการลดไข้สำหรับเด็กและวัยรุ่นอายุ &lt; 18 ปีอย่างเด็ดขาด เนื่องจากเสี่ยงต่อภาวะตับวายและสมองบวมรุนแรง (Reye's Syndrome)
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 6: Hospital Referral Criteria (CRB-65) -->
+    <section id="referral-criteria" class="scroll-mt-24 bg-gradient-to-br from-rose-900 to-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-md">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-rose-800/80">
+        <div>
+          <span class="text-xs font-bold text-rose-300 tracking-wider uppercase">ส่วนที่ 4 • เกณฑ์ส่งต่อเร่งด่วน</span>
+          <h3 class="text-lg sm:text-xl font-black text-white">เกณฑ์การประสานส่งต่อโรงพยาบาลสุโขทัย (Referral Criteria & CRB-65)</h3>
+        </div>
+        <div class="text-xs px-3 py-1 rounded bg-rose-950 text-rose-200 border border-rose-700">
+          ศูนย์ประสานงานรับ-ส่งต่อ รพ.สุโขทัย
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 text-xs sm:text-sm">
+        
+        <!-- Left: Red Flag Critical Criteria -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-rose-200 text-sm uppercase tracking-wide">1. ข้อบ่งชี้ส่งต่อโรงพยาบาลทันที (Immediate Hospital Transfer)</h4>
+          <ul class="space-y-2.5 text-rose-100">
+            <li class="flex items-start gap-2 bg-rose-950/60 p-3 rounded-lg border border-rose-800">
+              <svg class="w-5 h-5 text-rose-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+              <span><strong>SpO2 &lt; 92%</strong> แม้ให้ออกซิเจนแคนนูลา (Nasal cannula) แล้ว</span>
+            </li>
+            <li class="flex items-start gap-2 bg-rose-950/60 p-3 rounded-lg border border-rose-800">
+              <svg class="w-5 h-5 text-rose-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span><strong>Severe Respiratory Distress:</strong> หายใจหอบเหนื่อยรุนแรง RR &gt; 30 ครั้ง/นาที ใช้กล้ามเนื้อช่วยหายใจชัดเจน หรือพูดไม่ได้</span>
+            </li>
+            <li class="flex items-start gap-2 bg-rose-950/60 p-3 rounded-lg border border-rose-800">
+              <svg class="w-5 h-5 text-rose-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span><strong>Alteration of consciousness / Sepsis / Shock:</strong> ซึม สับสน เพ้อ ชัก หรือความดันโลหิตตก (SBP &lt; 90 mmHg)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: CRB-65 Community Severity Score (BTS Guideline) -->
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700 space-y-3">
+          <h4 class="font-bold text-sky-300 text-sm uppercase tracking-wide">2. การประเมินคะแนน CRB-65 สำหรับหน้างานเรือนจำ (BTS Guideline)</h4>
+          <p class="text-xs text-slate-300">ประเมินอย่างละ 1 คะแนน หากพบปัจจัยต่อไปนี้:</p>
+          
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-2.5 rounded bg-slate-900/80 border border-slate-700">
+              <strong class="text-sky-400 font-mono text-sm">C:</strong> Confusion (ซึม สับสนเวลา/สถานที่)
+            </div>
+            <div class="p-2.5 rounded bg-slate-900/80 border border-slate-700">
+              <strong class="text-sky-400 font-mono text-sm">R:</strong> Resp rate ≥ 30 ครั้ง/นาที
+            </div>
+            <div class="p-2.5 rounded bg-slate-900/80 border border-slate-700">
+              <strong class="text-sky-400 font-mono text-sm">B:</strong> BP (SBP &lt; 90 หรือ DBP ≤ 60)
+            </div>
+            <div class="p-2.5 rounded bg-slate-900/80 border border-slate-700">
+              <strong class="text-sky-400 font-mono text-sm">65:</strong> อายุตั้งแต่ 65 ปีขึ้นไป
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-700 text-xs space-y-1">
+            <div>• <strong>คะแนน 0:</strong> ความเสี่ยงต่ำ ดูแลใน Cohort Ward เรือนจำได้</div>
+            <div>• <strong>คะแนน 1–2 หรือมีปอดอักเสบ 2 ข้าง (Bilateral CXR):</strong> พิจารณาส่งต่อ รพ.สุโขทัย</div>
+            <div class="text-rose-300 font-bold">• <strong>คะแนน 3–4:</strong> ส่งต่อห้องฉุกเฉิน รพ.สุโขทัย ทันที เตรียมพิจารณาเตียง HDU/ICU</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>ศูนย์ปฏิบัติการควบคุมการระบาดโรคไข้หวัดใหญ่ เรือนจำจังหวัดสุโขทัย • ร่วมกับสำนักงานสาธารณสุขจังหวัดสุโขทัย และโรงพยาบาลสุโขทัย</p>
+      <p class="text-slate-500 text-[11px]">
+        อ้างอิง: คำแนะนำการรักษาผู้ป่วยไข้หวัดใหญ่ กระทรวงสาธารณสุขไทย (ปรับปรุง 2 ต.ค. 2566) & British Thoracic Society (BTS) / Health Protection Agency Guidelines (Thorax 2007)
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive Script -->
+  <script>
+    // Interactive Triage & Rx Calculator logic
+    function calculateTriage() {
+      const temp = parseFloat(document.getElementById('v-temp').value) || 37.0;
+      const spo2 = parseFloat(document.getElementById('v-spo2').value) || 98;
+      const rr = parseFloat(document.getElementById('v-rr').value) || 18;
+      const sbp = parseFloat(document.getElementById('v-sbp').value) || 120;
+      
+      const onsetWithin48 = document.getElementById('f-onset-48').checked;
+      const dyspnea = document.getElementById('f-dyspnea').checked;
+      const crepitation = document.getElementById('f-crepitation').checked;
+      const confusion = document.getElementById('f-confusion').checked;
+
+      const hrAge = document.getElementById('hr-age').checked;
+      const hrLung = document.getElementById('hr-lung').checked;
+      const hrDmHeart = document.getElementById('hr-dm-heart').checked;
+      const hrImmuno = document.getElementById('hr-immuno').checked;
+      const hrObesity = document.getElementById('hr-obesity').checked;
+      const hrAspirin = document.getElementById('hr-aspirin').checked;
+      const hasHighRisk = hrAge || hrLung || hrDmHeart || hrImmuno || hrObesity || hrAspirin;
+
+      const crcl = document.getElementById('v-crcl').value;
+
+      // Evaluation
+      const isRed = (spo2 < 95) || (rr > 24) || dyspnea || crepitation || confusion || (sbp < 90);
+      const isYellow = !isRed && hasHighRisk;
+
+      const resBadge = document.getElementById('res-badge');
+      const resSev = document.getElementById('res-severity');
+      const resSevDesc = document.getElementById('res-severity-desc');
+      const resAntiviralStatus = document.getElementById('res-antiviral-status');
+      const resAntiviralDosage = document.getElementById('res-antiviral-dosage');
+      const resAntiviralNote = document.getElementById('res-antiviral-note');
+      const resCxrStatus = document.getElementById('res-cxr-status');
+      const resCxrDesc = document.getElementById('res-cxr-desc');
+      const resRefStatus = document.getElementById('res-referral-status');
+      const resRefDesc = document.getElementById('res-referral-desc');
+
+      // Dose by renal function helper
+      let oseltamivirDose = "75 mg (1 เม็ด) วันละ 2 ครั้ง หลังอาหาร เช้า-เย็น นาน 5 วัน";
+      if (crcl === 'mild-ckd') {
+        oseltamivirDose = "30 mg (1 เม็ด) วันละ 2 ครั้ง หลังอาหาร นาน 5 วัน (ปรับไต CrCl 30-60)";
+      } else if (crcl === 'mod-ckd') {
+        oseltamivirDose = "30 mg (1 เม็ด) วันละ 1 ครั้ง นาน 5 วัน (ปรับไต CrCl 10-30)";
+      } else if (crcl === 'severe-hd') {
+        oseltamivirDose = "30 mg เริ่มแรก ตามด้วย 30 mg ทุก 2 รอบฟอกไต (CrCl < 10 หรือ HD)";
+      }
+
+      if (isRed) {
+        // Red Priority
+        resBadge.textContent = "กลุ่มสีแดง (Red - High Priority)";
+        resBadge.className = "px-3 py-1 rounded-full text-xs font-black bg-rose-600 text-white animate-pulse";
+        resSev.textContent = "สงสัยปอดอักเสบ / ภาวะแทรกซ้อนรุนแรง";
+        resSevDesc.textContent = "พบสัญญาณเตือนวิกฤต: SpO2 < 95% หรือ RR > 24 หรือมีอาการหอบเหนื่อย/ฟังปอดผิดปกติ";
+
+        resAntiviralStatus.textContent = "ต้องให้ Oseltamivir ทันที";
+        resAntiviralStatus.className = "text-rose-600 font-bold";
+        resAntiviralDosage.textContent = `Oseltamivir: ${oseltamivirDose}`;
+        resAntiviralDosage.className = "text-xs font-mono text-rose-800 bg-rose-50 p-2 rounded border border-rose-300 font-bold";
+        resAntiviralNote.textContent = "*ตามไกด์ไลน์ สธ. 2566 & BTS: ให้ยาต้านไวรัสทันทีแม้มีอาการเกิน 48 ชม. แล้วก็ตาม!";
+
+        resCxrStatus.textContent = "ต้องตรวจ Mobile CXR ด่วน";
+        resCxrStatus.className = "text-rose-600 font-bold";
+        resCxrDesc.textContent = "สงสัยปอดอักเสบ ต้องส่งตรวจรังสีทรวงอกเคลื่อนที่เพื่อดู Infiltrate และคัดกรอง TB";
+
+        if (spo2 < 92 || confusion || sbp < 90) {
+          resRefStatus.textContent = "ส่งตัวไป รพ.สุโขทัย ด่วน";
+          resRefStatus.className = "text-rose-600 font-bold";
+          resRefDesc.textContent = "เข้าเกณฑ์อันตราย (SpO2 < 92% หรือ BP ตก หรือซึมสับสน) ประสานส่งต่อทันที";
+        } else {
+          resRefStatus.textContent = "ประเมินผล CXR ก่อนพิจารณาส่งต่อ";
+          resRefStatus.className = "text-amber-700 font-bold";
+          resRefDesc.textContent = "หาก CXR ปอดอักเสบ 2 ข้าง หรืออาการไม่คงที่ ให้ประสานส่งต่อ รพ.สุโขทัย";
+        }
+
+      } else if (isYellow) {
+        // Yellow Priority
+        resBadge.textContent = "กลุ่มสีเหลือง (Yellow - Moderate Priority)";
+        resBadge.className = "px-3 py-1 rounded-full text-xs font-black bg-amber-500 text-white";
+        resSev.textContent = "กลุ่มเสี่ยงต่อโรครุนแรง (High-Risk Group)";
+        resSevDesc.textContent = "มีโรคประจำตัวเรื้อรัง/อายุสูง แม้ยังไม่หอบแต่มีความเสี่ยงสูงที่จะแย่ลง";
+
+        resAntiviralStatus.textContent = "แนะนำให้ Oseltamivir ทันที";
+        resAntiviralStatus.className = "text-amber-700 font-bold";
+        resAntiviralDosage.textContent = `Oseltamivir: ${oseltamivirDose}`;
+        resAntiviralDosage.className = "text-xs font-mono text-amber-900 bg-amber-50 p-2 rounded border border-amber-300 font-bold";
+        resAntiviralNote.textContent = onsetWithin48 
+          ? "*เริ่มยาได้ภายใน 48 ชม. ประสิทธิภาพสูงสุด" 
+          : "*เริ่มยาช้ากว่า 48 ชม. แต่ยังแนะนำให้ยาในกลุ่มเสี่ยงสูงตามไกด์ไลน์ สธ. 2566";
+
+        resCxrStatus.textContent = (temp >= 38.5) ? "พิจารณาทำ CXR หากไข้สูง > 48 ชม." : "ตรวจติดตามอาการ";
+        resCxrStatus.className = "text-slate-700 font-semibold";
+        resCxrDesc.textContent = "หากไข้สูงลอยหรือเริ่มไอถี่ขึ้นให้ส่งทำ Mobile CXR";
+
+        resRefStatus.textContent = "แยกกักตัวใน Cohort Ward เรือนจำ";
+        resRefStatus.className = "text-emerald-700 font-semibold";
+        resRefDesc.textContent = "ติดตาม V/S และ SpO2 ทุก 8–12 ชม. โดยพยาบาลเรือนจำ";
+
+      } else {
+        // Green Priority
+        resBadge.textContent = "กลุ่มสีเขียว (Green - Low Priority)";
+        resBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
+        resSev.textContent = "ผู้ป่วยทั่วไป อาการไม่รุนแรง (Mild ILI)";
+        resSevDesc.textContent = "สัญญาณชีพปกติ ไม่มีโรคประจำตัวกลุ่มเสี่ยง";
+
+        if (onsetWithin48 && temp >= 38.0) {
+          resAntiviralStatus.textContent = "รักษาตามอาการ (อาจพิจารณายาต้านไวรัส)";
+          resAntiviralStatus.className = "text-slate-700 font-semibold";
+          resAntiviralDosage.textContent = "ให้ยารักษาตามอาการ (Paracetamol, Cetirizine, ยาแก้ไอ) หรือพิจารณา Oseltamivir หากต้องการให้หายเร็วขึ้นและมีโควตายา";
+        } else {
+          resAntiviralStatus.textContent = "รักษาตามอาการเท่านั้น (ไม่ต้องให้ยาต้านไวรัส)";
+          resAntiviralStatus.className = "text-slate-600 font-medium";
+          resAntiviralDosage.textContent = "ให้ Paracetamol 500mg, Cetirizine 10mg, ยาแก้ไอขับเสมหะ (สงวน Oseltamivir ให้กลุ่มเสี่ยง)";
+        }
+        resAntiviralDosage.className = "text-xs font-mono text-slate-700 bg-slate-100 p-2 rounded border border-slate-200";
+        resAntiviralNote.textContent = "*หากอาการแย่ลง มีไข้สูงลอย หรือหอบเหนื่อยหลัง 48 ชม. ให้กลับมาตรวจซ้ำ";
+
+        resCxrStatus.textContent = "ไม่ต้องถ่ายภาพรังสี";
+        resCxrStatus.className = "text-slate-500";
+        resCxrDesc.textContent = "ไม่มีข้อบ่งชี้ทางคลินิก";
+
+        resRefStatus.textContent = "ดูแลใน Cohort Ward เรือนจำ";
+        resRefStatus.className = "text-emerald-700 font-semibold";
+        resRefDesc.textContent = "สวมหน้ากากอนามัย 100% พักผ่อน ดื่มน้ำมากๆ";
+      }
+    }
+
+    function resetTriageForm() {
+      document.getElementById('v-temp').value = 38.0;
+      document.getElementById('v-spo2').value = 97;
+      document.getElementById('v-rr').value = 18;
+      document.getElementById('v-sbp').value = 120;
+      document.getElementById('f-onset-48').checked = true;
+      document.getElementById('f-dyspnea').checked = false;
+      document.getElementById('f-crepitation').checked = false;
+      document.getElementById('f-confusion').checked = false;
+      document.getElementById('hr-age').checked = false;
+      document.getElementById('hr-lung').checked = false;
+      document.getElementById('hr-dm-heart').checked = false;
+      document.getElementById('hr-immuno').checked = false;
+      document.getElementById('hr-obesity').checked = false;
+      document.getElementById('hr-aspirin').checked = false;
+      document.getElementById('v-crcl').value = 'normal';
+      calculateTriage();
+    }
+
+    // Quick summary copy helper
+    function copyProtocolSummary() {
+      const summaryText = `[คำสั่งการปฏิบัติงานควบคุมการระบาดไข้หวัดใหญ่สายพันธุ์เอ เรือนจำจังหวัดสุโขทัย 14/9/69]
+1. ยาต้านไวรัส Oseltamivir 100 คอร์ส:
+   - Priority 1 (แดง: หอบ, SpO2 < 95%, CXR ปอดอักเสบ) -> ให้ยาทันทีแม้เริ่มอาการเกิน 48 ชม.
+   - Priority 2 (เหลือง: กลุ่มเสี่ยง 608, หอบหืด, อ้วน, ภูมิคุ้มกันต่ำ) -> ให้ยาเร็วที่สุด
+   - งดแจกยาเพื่อการป้องกัน (Prophylaxis) ในผู้สัมผัสโรคตามเกณฑ์ สธ. 2566
+2. ขนาดยาไตวาย (CKD):
+   - CrCl 30-60: 30 mg bid x 5 วัน
+   - CrCl 10-30: 30 mg od x 5 วัน
+   - CrCl < 10 หรือ HD: 30 mg stat ตามด้วย 30 mg ทุก 2 รอบฟอกไต
+3. ยาปฏิชีวนะ Secondary Bacterial Pneumonia:
+   - Augmentin 1000 mg (1 g) วันละ 2 ครั้ง หลังอาหาร เช้า-เย็น (7 วัน)
+4. เกณฑ์ทำ Mobile CXR: SpO2 < 95%, RR > 24, ฟังปอดพบ Crepitation หรือไข้สูงลอย > 48 ชม.
+5. เกณฑ์ส่งต่อ รพ.สุโขทัย: SpO2 < 92% แม้ให้ออกซิเจน, ช็อก, ซึมสับสน หรือ CRB-65 >= 2`;
+
+      const el = document.createElement('textarea');
+      el.value = summaryText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+
+      const toast = document.getElementById('toast');
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Initial run
+    window.addEventListener('DOMContentLoaded', () => {
+      calculateTriage();
+    });
+  </script>
+</body>
+</html>
